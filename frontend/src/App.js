@@ -18,6 +18,11 @@ const App = () => {
     setAudioUrl("");
   };
 
+  const handleFileUpload = (uploadedFile) => {
+    setFile(uploadedFile);
+    setAudioUrl("");
+  };
+
   const handleSubmit = async () => {
     formData.append("file", file);
     // Handle upload
@@ -50,7 +55,7 @@ const App = () => {
       <h2>Our App</h2>
       <div className="container">
         <div>
-          <FileUpload onUpload={(uploadedFile) => setFile(uploadedFile)} />
+          <FileUpload onUpload={handleFileUpload} />
         </div>
         <div style={{ textAlign: "left" }}>
           <Typography>Select output language: </Typography>
