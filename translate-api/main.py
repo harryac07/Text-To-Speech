@@ -42,3 +42,12 @@ async def translate(number: int = 0, language = 'en'):
     os.path.dirname(__file__) + '/welcome.mp3',
     media_type="audio/mpeg"
   )
+
+@app.get("/word-to-speech")
+async def word_to_speech(word = 'unknown', language = 'en'):
+  myobj = gTTS(text=word, lang=language, slow=False)
+  myobj.save("welcome.mp3") 
+  return FileResponse(
+    os.path.dirname(__file__) + '/welcome.mp3',
+    media_type="audio/mpeg"
+  )
