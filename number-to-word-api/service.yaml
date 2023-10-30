@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: number-to-word-api-service
+  labels:
+    app: number-to-word-api
+spec:
+  selector:
+    app: number-to-word-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3003
+  type: NodePort
