@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: number-to-word-api-deployment
+  labels:
+    app: number-to-word-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: number-to-word-api
+  template:
+    metadata:
+      labels:
+        app: number-to-word-api
+    spec:
+      containers:
+      - name: number-to-word-api
+        image: number-to-word-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3003

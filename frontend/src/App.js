@@ -4,7 +4,7 @@ import FileUpload from "./Component/fileUpload";
 import { Button, Select, MenuItem, Typography } from "@mui/material";
 
 import "./App.css";
-const speakAPI = "http://localhost:3002/speak";
+const speakAPI = "http://localhost:3004/image-to-speech";
 
 const formData = new FormData();
 
@@ -28,19 +28,11 @@ const App = () => {
     // Handle upload
     try {
       const response = await axios.post(
-        "http://localhost:3001/predict",
+        speakAPI,
         formData
       );
-      const number = response.data.number;
-
-      const speakResponse = await axios.get(
-        `${speakAPI}?number=${number}&language=${selectedLanguage}`,
-        {
-          responseType: "blob"
-        }
-      );
       // Create a Blob URL for the audio data
-      const blob = new Blob([speakResponse.data], { type: "audio/mpeg" });
+      const blob = new Blob([response.data], { type: "audio/mpeg" });
       const url = window.URL.createObjectURL(blob);
 
       // Set the audio URL

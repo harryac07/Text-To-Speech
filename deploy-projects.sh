@@ -62,11 +62,17 @@ deploy_project() {
 # Configure your Docker client to interact with the Docker daemon inside your Minikube
 eval $(minikube docker-env)
 
+# Deploy the "text-to-speech" project with local port 3001
+deploy_project "text-to-speech" 3001
+
 # Deploy the "translate-api" project with local port 3002
 deploy_project "translate-api" 3002
 
-# Deploy the "text-to-speech" project with local port 3001
-deploy_project "text-to-speech" 3001
+# Deploy the "number-to-word-api" project with local port 3003
+deploy_project "number-to-word-api" 3003
+
+# Deploy the "backend-api" project with local port 3004
+deploy_project "backend-api" 3004
 
 # Deploy the "frontend" project with local port 3000
 deploy_project "frontend" 3000

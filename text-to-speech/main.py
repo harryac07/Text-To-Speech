@@ -15,10 +15,7 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 
 # Define the CORS settings
-origins = [
-    "http://localhost", 
-    "http://localhost:3000",
-]
+origins = ["*"]
 
 # Add the CORS middleware to the FastAPI app
 app.add_middleware(

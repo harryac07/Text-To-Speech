@@ -2,8 +2,22 @@ from fastapi import FastAPI, File, UploadFile, Response
 import circuitbreaker
 import requests
 import logging
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Define the CORS settings
+origins = ["*"]
+
+# Add the CORS middleware to the FastAPI app
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  # You can specify specific HTTP methods if needed
+    allow_headers=["*"],  # You can specify specific headers if needed
+)
+
 logging.basicConfig(datefmt='%Y-%m-%d %H:%M:%S %z', level=logging.INFO)
 logger = logging.getLogger()
 
