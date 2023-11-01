@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: text-to-speech-service
+  name: image-to-number-api-service
   labels:
-    app: text-to-speech
+    app: image-to-number-api
 spec:
   selector:
-    app: text-to-speech
+    app: image-to-number-api
   ports:
     - protocol: TCP
       port: 80

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: translate-api-deployment
+  name: word-to-speech-api-deployment
   labels:
-    app: translate-api
+    app: word-to-speech-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: translate-api
+      app: word-to-speech-api
   template:
     metadata:
       labels:
-        app: translate-api
+        app: word-to-speech-api
     spec:
       containers:
-      - name: translate-api
-        image: translate-api:latest
+      - name: word-to-speech-api
+        image: word-to-speech-api:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 3002

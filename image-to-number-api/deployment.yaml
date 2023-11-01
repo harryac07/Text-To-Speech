@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: text-to-speech-deployment
+  name: image-to-number-api-deployment
   labels:
-    app: text-to-speech
+    app: image-to-number-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: text-to-speech
+      app: image-to-number-api
   template:
     metadata:
       labels:
-        app: text-to-speech
+        app: image-to-number-api
     spec:
       containers:
-      - name: text-to-speech
-        image: text-to-speech:latest
+      - name: image-to-number-api
+        image: image-to-number-api:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 3001

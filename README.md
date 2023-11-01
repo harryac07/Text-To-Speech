@@ -28,6 +28,10 @@ chmod +x deploy-projects.sh
 
 **Frontend:** http://localhost:3000/
 
-**File To Text API Endpoint:** http://localhost:3001/
+**image-to-number-api:** http://localhost:3001/
 
-**Text To Speech API Endpoint:** http://localhost:3002/
+**word-to-speech-api:** http://localhost:3002/
+
+**number-to-word-api:** http://localhost:3003/
+
+**backend-api:** http://localhost:3004/
